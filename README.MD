@@ -71,3 +71,7 @@ All events can be cancelled using the ``setCancelled()`` method.
 
 ### ViaVersion API
 Since ViaProxy uses ViaVersion for its protocol handling, the entire ViaVersion API is available.
+
+### Loading the plugin
+To load plugins with ViaProxy you have to create a ``plugins`` folder in the same directory as the ViaProxy jar.\
+You can then put your plugin jar in the ``plugins`` folder and ViaProxy will load it on startup.
