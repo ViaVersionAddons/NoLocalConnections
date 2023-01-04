@@ -69,6 +69,13 @@ ViaProxy currently has 4 events:
 The events ``Client2ProxyChannelInitializeEvent`` and ``Proxy2ServerChannelInitializeEvent`` both have ``PRE`` and ``POST`` states.\
 All events can be cancelled using the ``setCancelled()`` method.
 
+To listen to an event you have to add the ``@EventHandler`` annotation to the handler method and put the event as the only parameter:
+````java
+@EventHandler
+public void onPreConnect(final PreConnectEvent event) {
+}
+````
+
 ### ViaVersion API
 Since ViaProxy uses ViaVersion for its protocol handling, the entire ViaVersion API is available.
 
