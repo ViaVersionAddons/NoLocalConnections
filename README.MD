@@ -60,14 +60,19 @@ You can register a listener using the ``register()`` method in the ``PluginManag
 PluginManager.EVENT_MANAGER.register(this);
 ````
 
-ViaProxy currently has 4 events:
+ViaProxy currently has 9 events:
  - Client2ProxyChannelInitializeEvent
- - Proxy2ServerChannelInitializeEvent
+ - Client2ProxyHandlerCreationEvent
  - ConsoleCommandEvent
+ - FillPlayerDataEvent
  - PreConnectEvent
+ - ProtocolHackInitEvent
+ - Proxy2ServerChannelInitializeEvent
+ - Proxy2ServerHandlerCreationEvent
+ - ViaLoadingEvent
 
 The events ``Client2ProxyChannelInitializeEvent`` and ``Proxy2ServerChannelInitializeEvent`` both have ``PRE`` and ``POST`` states.\
-All events can be cancelled using the ``setCancelled()`` method.
+Some events can be cancelled using the ``setCancelled()`` method.
 
 To listen to an event you have to add the ``@EventHandler`` annotation to the handler method and put the event as the only parameter:
 ````java
@@ -80,5 +85,4 @@ public void onPreConnect(final PreConnectEvent event) {
 Since ViaProxy uses ViaVersion for its protocol handling, the entire ViaVersion API is available.
 
 ### Loading the plugin
-To load plugins with ViaProxy you have to create a ``plugins`` folder in the same directory as the ViaProxy jar.\
-You can then put your plugin jar in the ``plugins`` folder and ViaProxy will load it on startup.
+To load plugins just put the plugin jars in the ``plugins`` folder and ViaProxy will load them on startup.
