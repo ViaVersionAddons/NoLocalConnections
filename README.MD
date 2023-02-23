@@ -65,10 +65,14 @@ ViaProxy currently has 9 events:
  - Client2ProxyHandlerCreationEvent
  - ConsoleCommandEvent
  - FillPlayerDataEvent
+ - GetDefaultPortEvent
+ - PostOptionsParseEvent
  - PreConnectEvent
+ - PreOptionsParseEvent
  - ProtocolHackInitEvent
  - Proxy2ServerChannelInitializeEvent
  - Proxy2ServerHandlerCreationEvent
+ - ResolveSrvEvent
  - ViaLoadingEvent
 
 The events ``Client2ProxyChannelInitializeEvent`` and ``Proxy2ServerChannelInitializeEvent`` both have ``PRE`` and ``POST`` states.\
