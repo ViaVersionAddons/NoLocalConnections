@@ -60,7 +60,7 @@ You can register a listener using the ``register()`` method in the ``PluginManag
 PluginManager.EVENT_MANAGER.register(this);
 ````
 
-ViaProxy currently has 9 events:
+ViaProxy currently has 15 events:
  - Client2ProxyChannelInitializeEvent
  - Client2ProxyHandlerCreationEvent
  - ConsoleCommandEvent
@@ -72,6 +72,8 @@ ViaProxy currently has 9 events:
  - ProtocolHackInitEvent
  - Proxy2ServerChannelInitializeEvent
  - Proxy2ServerHandlerCreationEvent
+ - ProxyStartEvent
+ - ProxyStopEvent
  - ResolveSrvEvent
  - ViaLoadingEvent
 
