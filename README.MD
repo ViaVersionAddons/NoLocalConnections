@@ -34,12 +34,13 @@ If the domain of a server contains an underscore you currently can't connect to 
 ## How to make a ViaProxy plugin
 ### viaproxy.yml
 ViaProxy plugins require a ``viaproxy.yml`` file in the root of the plugin jar.\
-It defines the name, version, author and main class of the plugin:
+It defines the name, version, author, main class and minimum supported ViaProxy version of the plugin:
 ````yaml
 name: "CoolPlugin"
 version: "1.0.0"
 author: "ExampleDude"
 main: "com.exampledude.coolplugin.Main"
+min-version: "3.0.0"
 ````
 
 ### Plugin Main
@@ -52,6 +53,16 @@ public class Main extends ViaProxyPlugin {
 }
 ````
 
+There is an optional ``registerTransformers`` method that can be implemented to register class transformers **for the own plugin classes**:
+````java
+@Override
+public void registerTransformers(final TransformerManager transformerManager) {
+    transformerManager.addTransformer("com.exampledude.coolplugin.Transformer");
+}
+````
+
+Check out the [ClassTransform](https://github.com/Lenni0451/ClassTransform/#usage) documentation for more information on how to use class transformers.
+
 ### Events
 The only real way to interact with ViaProxy is through events.\
 ViaProxy uses [LambdaEvents](https://github.com/Lenni0451/LambdaEvents) for event handling.\
@@ -60,9 +71,11 @@ You can register a listener using the ``register()`` method in the ``PluginManag
 PluginManager.EVENT_MANAGER.register(this);
 ````
 
-ViaProxy currently has 15 events:
+ViaProxy currently (at the time of writing) has the following events:
  - Client2ProxyChannelInitializeEvent
  - Client2ProxyHandlerCreationEvent
+ - ClientLoggedInEvent
+ - ConnectEvent
  - ConsoleCommandEvent
  - FillPlayerDataEvent
  - GetDefaultPortEvent
@@ -77,8 +90,7 @@ ViaProxy currently has 15 events:
  - ResolveSrvEvent
  - ViaLoadingEvent
 
-The events ``Client2ProxyChannelInitializeEvent`` and ``Proxy2ServerChannelInitializeEvent`` both have ``PRE`` and ``POST`` states.\
-Some events can be cancelled using the ``setCancelled()`` method.
+Some events have pre- and post-states and some events are cancellable.
 
 To listen to an event you have to add the ``@EventHandler`` annotation to the handler method and put the event as the only parameter:
 ````java
