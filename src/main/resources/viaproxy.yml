@@ -1,4 +1,5 @@
-name: NoLocalConnections
-version: 1.0
-author: Lenni0451
-main: net.lenni0451.nolocalconnections.Main
+name: "NoLocalConnections"
+version: "1.0"
+author: "Lenni0451"
+main: "net.lenni0451.nolocalconnections.Main"
+min-version: "net.raphimc:ViaProxy:3.0.22"
