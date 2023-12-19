@@ -6,6 +6,7 @@ import net.raphimc.viaproxy.plugins.ViaProxyPlugin;
 import net.raphimc.viaproxy.plugins.events.PreConnectEvent;
 
 import java.net.InetAddress;
+import java.net.InetSocketAddress;
 
 public class Main extends ViaProxyPlugin {
 
@@ -16,8 +17,8 @@ public class Main extends ViaProxyPlugin {
 
     @EventHandler
     public void onEvent(PreConnectEvent event) {
-        InetAddress betterAddress = event.getServerAddress().toSocketAddress().getAddress();
-        if (this.isLocal(betterAddress)) event.setCancelMessage("§CYou can't connect to any local address");
+        if (!(event.getServerAddress() instanceof InetSocketAddress socketAddress)) return;
+        if (this.isLocal(socketAddress.getAddress())) event.setCancelMessage("§CYou can't connect to any local address");
     }
 
     private boolean isLocal(final InetAddress address) {
