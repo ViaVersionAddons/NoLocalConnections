@@ -27,7 +27,7 @@ public class KickMessageConfig {
   
     public static void load() {
         try {
-            ConfigLoader<MultiLaunchConfig> configLoader = new ConfigLoader<>(MultiLaunchConfig.class);
+            ConfigLoader<KickMessageConfig> configLoader = new ConfigLoader<>(KickMessageConfig.class);
             configLoader.getConfigOptions().setResetInvalidOptions(true); //Reset invalid options to their default value
             configLoader.loadStatic(ConfigProvider.file(new File("multilaunch.yml")));
         } catch (Throwable t) {
