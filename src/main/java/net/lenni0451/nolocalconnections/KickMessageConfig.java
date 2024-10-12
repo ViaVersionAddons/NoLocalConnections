@@ -17,7 +17,7 @@ import java.util.List;
         "Made by Lenni0451",
         "Source: https://github.com/ViaVersionAddons/NoLocalConnections"
 })
-public class MultiLaunchConfig {
+public class KickMessageConfig {
 
     @Option("kick")
     @Description({
