@@ -19,7 +19,7 @@ import java.util.List;
 })
 public class MultiLaunchConfig {
 
-    @Option("ServerJar")
+    @Option("kick")
     @Description({
             "kick message when the user tries to join using local address such as 192.168.35.1. you can use the Decoration Codes here using Section Symbol(§)."
     })
