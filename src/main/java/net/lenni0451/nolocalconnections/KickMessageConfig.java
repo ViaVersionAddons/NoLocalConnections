@@ -29,7 +29,7 @@ public class KickMessageConfig {
         try {
             ConfigLoader<KickMessageConfig> configLoader = new ConfigLoader<>(KickMessageConfig.class);
             configLoader.getConfigOptions().setResetInvalidOptions(true); //Reset invalid options to their default value
-            configLoader.loadStatic(ConfigProvider.file(new File("multilaunch.yml")));
+            configLoader.loadStatic(ConfigProvider.file(new File("kickmessage.yml")));
         } catch (Throwable t) {
             Logger.LOGGER.error("Unable to load kick message! turning off viaproxy...", t);
             System.exit(-1);
