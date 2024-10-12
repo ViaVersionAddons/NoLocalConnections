@@ -1,5 +1,6 @@
 package net.lenni0451.nolocalconnections;
 
+import net.lenni0451.nolocalconnections.KickMessageConfig;
 import net.lenni0451.lambdaevents.EventHandler;
 import net.raphimc.viaproxy.ViaProxy;
 import net.raphimc.viaproxy.plugins.ViaProxyPlugin;
@@ -12,13 +13,14 @@ public class Main extends ViaProxyPlugin {
 
     @Override
     public void onEnable() {
+        KickMessageConfig.load();
         ViaProxy.EVENT_MANAGER.register(this);
     }
 
     @EventHandler
     public void onEvent(PreConnectEvent event) {
         if (!(event.getServerAddress() instanceof InetSocketAddress socketAddress)) return;
-        if (this.isLocal(socketAddress.getAddress())) event.setCancelMessage("§cYou can't connect to any local address");
+        if (this.isLocal(socketAddress.getAddress())) event.setCancelMessage(KickMessageConfig.kick);
     }
 
     private boolean isLocal(final InetAddress address) {
