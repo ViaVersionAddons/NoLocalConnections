@@ -12,7 +12,7 @@ import java.util.List;
 
 @OptConfig(header = {
         "Configuration for the NoLocalConnections ViaProxy plugin.",
-        "Used to block a Connection for Local Address alongside ViaProxy.",
+        "Used to block a Connection for Local Address Connections through ViaProxy(useful for address_port_version.viaproxy.hostname).",
         "",
         "Made by Lenni0451",
         "Source: https://github.com/ViaVersionAddons/NoLocalConnections"
