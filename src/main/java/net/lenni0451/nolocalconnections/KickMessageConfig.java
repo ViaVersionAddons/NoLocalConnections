@@ -11,11 +11,11 @@ import java.io.File;
 import java.util.List;
 
 @OptConfig(header = {
-        "Configuration for the MultiLaunch ViaProxy plugin.",
-        "Used to launch a server jar alongside ViaProxy.",
+        "Configuration for the NoLocalConnections ViaProxy plugin.",
+        "Used to block a Connection for Local Address alongside ViaProxy.",
         "",
         "Made by Lenni0451",
-        "Source: https://github.com/ViaVersionAddons/ViaProxyMultiLaunch"
+        "Source: https://github.com/ViaVersionAddons/NoLocalConnections"
 })
 public class MultiLaunchConfig {
 
