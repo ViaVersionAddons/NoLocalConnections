@@ -40,10 +40,6 @@ lenni0451.net_39999_c0.30-cpe.viaproxy.127-0-0-1.nip.io
 
 If the domain of a server contains an underscore you currently can't connect to it since ViaProxy uses the underscore as a separator.
 
-#### Geyser - usage for GeyserConnect
-find a existing instance of viaproxy.
-join with `address_port_version.viaproxy.hostname` on GeyserConnect. (turning on Bedrock/Geyser Server requires Geyser-Viaproxy installed on server side.).
-
 ## How to make a ViaProxy plugin
 ### viaproxy.yml
 ViaProxy plugins require a ``viaproxy.yml`` file in the root of the plugin jar.\
