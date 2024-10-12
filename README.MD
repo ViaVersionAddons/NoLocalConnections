@@ -19,7 +19,10 @@ You have to replace ``0.0.0.0:<bind port>`` with the port you want ViaProxy to r
 The ``auth-method: openauthmod`` is optional and enables the [OpenAuthMod](https://github.com/RaphiMC/OpenAuthMod) authentication. for 1.19.4 users, see the caution below.\
 The ``target-address`` and ``target-version`` are required for ViaProxy to start but don't do anything in SRV mode.
 > [!CAUTION]
-> warning: auth-method: openauthmod will be not functional for 1.7-1.7.10, Vanilla 1.8-1.19.3, 1.19.4-1.21.1, and Bedrock Edition.\ Reason: 1.7-1.7.10: OpenAuthMod is only available for 1.8.\ Bedrock: Forge or Fabric don't support Bedrock Edition.\ OpenAuthMod discontinued before release of 1.19.4. use this option if you want to.
+> warning: auth-method: openauthmod will be not functional for 1.7-1.7.10, Vanilla 1.8-1.19.3, 1.19.4-1.21.1, and Bedrock Edition.\
+> Reason: 1.7-1.7.10: OpenAuthMod is only available for 1.8.\ 
+> Bedrock: Forge or Fabric don't support Bedrock Edition.\
+> OpenAuthMod discontinued before release of 1.19.4. use this option if you want to.
 ### Connecting to ViaProxy in SRV mode
 To connect to ViaProxy in SRV mode you need a domain pointing to the IP of the server running ViaProxy.\
 The subdomain ``viaproxy.`` is required for it to work.\
