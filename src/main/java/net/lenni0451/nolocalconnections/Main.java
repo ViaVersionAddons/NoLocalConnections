@@ -12,13 +12,14 @@ public class Main extends ViaProxyPlugin {
 
     @Override
     public void onEnable() {
+        KickMessageConfig.load();
         ViaProxy.EVENT_MANAGER.register(this);
     }
 
     @EventHandler
     public void onEvent(PreConnectEvent event) {
         if (!(event.getServerAddress() instanceof InetSocketAddress socketAddress)) return;
-        if (this.isLocal(socketAddress.getAddress())) event.setCancelMessage("§cConnection Cancelled! You are not allowed to connect to any local address!");
+        if (this.isLocal(socketAddress.getAddress())) event.setCancelMessage(KickMessageConfig.kick);
     }
 
     private boolean isLocal(final InetAddress address) {
