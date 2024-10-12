@@ -21,7 +21,7 @@ public class MultiLaunchConfig {
 
     @Option("ServerJar")
     @Description({
-            "kick message when the user tries to join using local address such as 192.168.35.1. you can use the Color Codes here."
+            "kick message when the user tries to join using local address such as 192.168.35.1. you can use the Decoration Codes here using Section Symbol(§)."
     })
     public static String kick = "";
   
