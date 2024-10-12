@@ -1,13 +1,15 @@
 plugins {
-    id "java"
+    id "java-library"
 }
 
-java.toolchain.languageVersion = JavaLanguageVersion.of(17)
-compileJava.options.encoding = "UTF-8"
+base {
+    java.toolchain.languageVersion = JavaLanguageVersion.of(17)
+    compileJava.options.encoding = "UTF-8"
 
-archivesBaseName = project.maven_name
-group = project.maven_group
-version = project.maven_version
+    archivesName = project.maven_name
+    group = project.maven_group
+    version = project.maven_version
+}
 
 repositories {
     maven {

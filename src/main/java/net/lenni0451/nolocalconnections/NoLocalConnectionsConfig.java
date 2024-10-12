@@ -8,30 +8,30 @@ import net.lenni0451.optconfig.provider.ConfigProvider;
 import net.raphimc.viaproxy.util.logging.Logger;
 
 import java.io.File;
-import java.util.List;
 
 @OptConfig(header = {
         "Configuration for the NoLocalConnections ViaProxy plugin.",
-        "Used to block a Connection for Local Address Connections through ViaProxy(useful for address_port_version.viaproxy.hostname).",
+        "Used to block connections to local addresses through ViaProxy (useful for public SRV proxies).",
         "",
         "Made by Lenni0451",
         "Source: https://github.com/ViaVersionAddons/NoLocalConnections"
 })
-public class KickMessageConfig {
+public class NoLocalConnectionsConfig {
 
-    @Option("kick")
+    @Option("KickMessage")
     @Description({
-            "kick message when the user tries to join using local address such as 192.168.35.1. you can use the Decoration Codes here using Section Symbol(§)."
+            "Kick message when the user tries to connect local addresses such as 192.168.35.1",
+            "You can use color codes here using section symbol (§)."
     })
-    public static String kick = "§cYou can't connect to any local address.";
-  
-    public static void load() {
+    public static String kickMessage = "§cYou can't connect to any local address.";
+
+    public static void load(final File dataFolder) {
         try {
-            ConfigLoader<KickMessageConfig> configLoader = new ConfigLoader<>(KickMessageConfig.class);
+            ConfigLoader<NoLocalConnectionsConfig> configLoader = new ConfigLoader<>(NoLocalConnectionsConfig.class);
             configLoader.getConfigOptions().setResetInvalidOptions(true); //Reset invalid options to their default value
-            configLoader.loadStatic(ConfigProvider.file(new File("kickmessage.yml")));
+            configLoader.loadStatic(ConfigProvider.file(new File(dataFolder, "config.yml")));
         } catch (Throwable t) {
-            Logger.LOGGER.error("Unable to load kick message! turning off viaproxy...", t);
+            Logger.LOGGER.error("Unable to load config! Shutting down...", t);
             System.exit(-1);
         }
     }
