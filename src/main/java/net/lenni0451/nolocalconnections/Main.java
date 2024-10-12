@@ -18,7 +18,7 @@ public class Main extends ViaProxyPlugin {
     @EventHandler
     public void onEvent(PreConnectEvent event) {
         if (!(event.getServerAddress() instanceof InetSocketAddress socketAddress)) return;
-        if (this.isLocal(socketAddress.getAddress())) event.setCancelMessage("§cYou can't connect to any local address");
+        if (this.isLocal(socketAddress.getAddress())) event.setCancelMessage("§cConnection Cancelled! You are not allowed to connect to any local address!");
     }
 
     private boolean isLocal(final InetAddress address) {
