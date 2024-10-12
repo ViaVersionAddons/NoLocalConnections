@@ -1,5 +1,6 @@
 package net.lenni0451.nolocalconnections;
 
+import net.lenni0451.nolocalconnections.KickMessageConfig;
 import net.lenni0451.lambdaevents.EventHandler;
 import net.raphimc.viaproxy.ViaProxy;
 import net.raphimc.viaproxy.plugins.ViaProxyPlugin;
